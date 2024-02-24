@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Menu</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #menu {
+            text-align: center;
+            background-color: rgb(27, 238, 196);
+            margin: 0px;
+            padding: 0px;
+        }
+        #menu li {
+            display: inline-block;
+            padding: 15px 10px;
+            font-size: 16px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .sticky {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+        img{
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <img src="olena-bohovyk-dIMJWLx1YbE-unsplash.jpg" alt="">
+  <nav id="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Service</li>
+    <li>Info</li> 
+  </nav>
+<div id="container">
+    <h1>About Us</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, inventore ullam dolores dolorum enim delectus soluta, iure perspiciatis quos dignissimos architecto nostrum earum autem corrupti consectetur qui exercitationem, id ratione.</p>
+   
+</div>
+<script>
+    
+    window.addEventListener("scroll", function() {
+        let menu = document.getElementById("menu");
+        if (window.pageYOffset >= 190 ) {
+            menu.classList.add('sticky');
+         
+        } else {
+            menu.classList.remove('sticky');
+        }
+    });
+</script>
+</body>
+</html>

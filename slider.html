@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <style>
+       body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        img {
+            width: 100%;
+            height: 550px;
+           
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+        
+       
+        }
+
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 45%;
+            color: white;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .caption {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+       .slide{
+        display: none;
+       }
+        
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="slide">
+        <img src="olena-bohovyk-dIMJWLx1YbE-unsplash.jpg" alt="">
+        <div class="caption">Text One</div>
+        </div> 
+        <div class="slide">
+        <img src="mg-cthu--1h_NN3nqzI-unsplash.jpg" alt="" />
+        <div class="caption">Text tow</div>
+      </div>
+      <div class="slide">
+        <img src="michael-d-rnKqWvO80Y4-unsplash.jpg" alt="" />
+        <div class="caption">Text three</div>
+      </div> 
+      <span class="left arrow" onclick="controler(-1)" style="font-size: 25px;">&#10094</span>
+      <span class="right arrow"onclick="controler(1)" style="font-size: 25px;">&#10095</span>
+      <script>
+        let ali = 0;
+        Slider(ali);
+    
+        function Slider(num) {
+            let slide = document.getElementsByClassName("slide");
+    
+            for (let i = 0; i < slide.length; i++) {
+    slide[i].style.display = "none";
+}
+
+     
+            slide[num].style.display = "block";
+        }
+    
+        function controler(x) {
+            ali += x;
+    
+            let slide = document.getElementsByClassName("slide");
+    
+            if (ali >= slide.length) {
+                ali = 0;
+            }
+    
+            if (ali < 0) {
+                ali = slide.length - 1;
+            }
+    
+            Slider(ali);
+        }
+    </script>
+    
+    </div>
+  </body>
+</html>

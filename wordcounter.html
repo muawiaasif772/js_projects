@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>words and Chracter counter</title>
+</head>
+<body>
+    <h1>word and chracter counter</h1>
+    <textarea name="" id="textbox" cols="30" rows="10"></textarea>
+    <p>
+        <span id="word">0</span> words
+        <span id="char">0</span> chracter
+    </p>
+    <script>
+       let text= document.getElementById("textbox");
+       text.addEventListener('input',function(){
+        let a=this.value.replace(/\s\s+/g, ' ');
+        // var ma=a.lenght;
+        document.getElementById("char").innerHTML=a.length;
+        let words=a.split(" ");
+        document.getElementById("word").innerHTML=words.length;
+
+        // a=a.trim( )
+        // let clean=a.filter(function(ele){
+        //     return (ele!=" ")
+
+        // })
+
+       })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgroundcolor Changer</title>
+
+    <style>
+       .switch, .btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        #black {
+            background-color: darkslategrey;
+        }
+        #red {
+            background-color: aqua;
+        }
+        #blue {
+            background-color: darkred;
+        }
+       #bl{
+        background-color: black;
+       }
+    </style>
+</head>
+<body>
+    <div class="switch">
+        <span id="black" class="btn" onclick="change('#2f4f4f')"></span>
+        <span id="red" class="btn" onclick="change('#00FFFF')"></span>
+        <span id="blue" class="btn" onclick="change('#8B0000')"></span>
+        <span id="bl" class="btn" onclick="change('#000000')"></span>
+    </div>
+    <div >
+        <h2 class="para">
+            my name is muhammad muawia asif
+        </h2>
+        <p class="para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt nostrum mollitia in quasi blanditiis iusto, est facere aut vitae quae doloribus atque quod necessitatibus eaque placeat odit hic aperiam!
+        </p>
+    </div>
+    
+    <script>
+     function change(color){
+   document.body.style.backgroundColor=color;
+   let text=document.getElementsByClassName("para")
+   if(color=="#000000"){
+    for (let ele of text){
+        ele.style.color="white";
+    }
+    
+    }
+    else{
+        for (let ele of text){
+        ele.style.color="black";
+    }
+    }
+    }
+   
+     
+    
+
+    </script>
+</body>
+</html>

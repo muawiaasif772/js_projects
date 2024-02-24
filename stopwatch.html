@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      .contain {
+        background-color:#283747;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .item {
+        /* background-color: black; */
+        /* border: 1px solid; */
+
+        width: 500px;
+        border-radius: 240px;
+        height: 110px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* padding-bottom: 20px; */
+/* padding-left: 7px; */
+/* padding-bottom: 7px; */
+border: 1px solid red;
+      }
+      .btn-container {
+        text-align: center;
+        /* margin-top: -89px; */
+        margin-top: 30px;
+      }
+      .digit {
+        font-size: 85px;
+        /* padding: 7px; */
+        color: white;
+        font-weight: bold;
+        font-family:'digital-clock-font';
+ src: url('put_the_location_to_your_font.ttf or .otf');
+ /* vertical-align: middle; */
+ 
+      }
+      .txt {
+        color: white;
+        margin-top: 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <div class="items">
+        <div class="item">
+          <span class="digit" id="hr">00</span>
+          <span class="txt"><sub>Hr</sub></span>
+          <span class="digit" id="min">00</span>
+          <span class="txt"><sub>Min</sub></span>
+          <span class="digit" id="sec">00</span>
+          <span class="txt"><sub>Sec</sub></span>
+          <span class="digit" id="mil">00</span>
+          <span class="txt"><sub>Mil</sub></span>
+        </div>
+        <div class="btn-container">
+          <button class="btn btn-success mr-3" id="start" onclick="start()">
+            Start
+          </button>
+          <button class="btn btn-primary  mr-3 " id="stop" onclick="stop()">
+            Stop
+          </button>
+          <button class="btn btn-danger  mr-3" id="reset" onclick="reset()">
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      var hr = 0;
+      var min = 0;
+      var sec = 0;
+      var mil = 0;
+      timer = false;
+      function start() {
+        timer = true;
+        stopwatch();
+      }
+      function stop() {
+        timer=false
+      }
+      function reset() {
+         mil=0;
+          min=0;
+       sec=0;
+        hr=0;
+        timer=false
+           document.getElementById("mil").innerHTML="00";
+           document.getElementById("sec").innerHTML="00";
+           document.getElementById("min").innerHTML="00";
+           document.getElementById("hr").innerHTML="00";
+
+      }
+      function stopwatch(){
+        if(timer==true){
+           mil+=1;
+            
+          
+        setTimeout("stopwatch()",10)
+           }
+           if(mil==100){
+            sec+=1;
+           
+            mil=0
+           }
+           if(sec==60){
+            min+=1;
+           sec=0
+           }
+
+           if(min==60){
+          hr+=hr;
+          min=0
+          sec=0
+           }
+           var milst=mil;
+           var minst=min;
+           var secst=sec;
+           var hrst=hr;
+          
+          if(hr<10){
+            hrst="0" +hrst
+          }
+           if(min<10){
+            minst="0"+minst
+          }
+           if(sec<10){
+            secst="0"+secst
+          } if(mil<10){
+            milst="0"+milst
+          }
+          document.getElementById("hr").innerHTML=hrst;
+          document.getElementById("min").innerHTML=minst;
+          document.getElementById("sec").innerHTML=secst;
+           document.getElementById("mil").innerHTML=milst;
+          
+        }
+      
+       
+      
+    </script>
+  </body>
+</html>

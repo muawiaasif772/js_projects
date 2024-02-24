@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Converter</title>
+</head>
+<body>
+
+<h2>Temperature Converter</h2>
+
+<label for="temperature">Temperature:</label>
+<input type="number" id="temperature" placeholder="Enter temperature">
+
+<label for="unit">Unit:</label>
+<select id="unit">
+  <option value="celsius">Celsius</option>
+  <option value="fahrenheit">Fahrenheit</option>
+  <option value="kelvin">Kelvin</option>
+</select>
+
+<label for="result">Result:</label>
+<input type="number" id="result" placeholder="Converted temperature" readonly>
+
+<script>
+const temperatureInput = document.getElementById('temperature');
+const unitSelect = document.getElementById('unit');
+const resultInput = document.getElementById('result');
+
+function convertTemperature(value, fromUnit, toUnit) {
+    if (fromUnit === toUnit) return value;
+
+    switch (fromUnit) {
+        case 'celsius':
+            return toUnit === 'fahrenheit' ? celsiusToFahrenheit(value) : celsiusToKelvin(value);
+        case 'fahrenheit':
+            return toUnit === 'celsius' ? fahrenheitToCelsius(value) : fahrenheitToKelvin(value);
+        case 'kelvin':
+            return toUnit === 'celsius' ? kelvinToCelsius(value) : kelvinToFahrenheit(value);
+        default:
+            return value;
+    }
+}
+
+function celsiusToFahrenheit(celsius) {
+    return (celsius * 9/5) + 32;
+}
+
+function celsiusToKelvin(celsius) {
+    return celsius + 273.15;
+}
+
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+}
+
+function fahrenheitToKelvin(fahrenheit) {
+    return (fahrenheit + 459.67) * 5/9;
+}
+
+function kelvinToCelsius(kelvin) {
+    return kelvin - 273.15;
+}
+
+function kelvinToFahrenheit(kelvin) {
+    return kelvin * 9/5 - 459.67;
+}
+
+function updateResult() {
+    const temperature = parseFloat(temperatureInput.value);
+    const fromUnit = unitSelect.value;
+    const toUnit = 'celsius'; // We are converting to Celsius by default
+    const convertedTemperature = convertTemperature(temperature, fromUnit, toUnit);
+    resultInput.value = isNaN(convertedTemperature) ? '' : convertedTemperature.toFixed(2);
+}
+
+temperatureInput.addEventListener('input', updateResult);
+unitSelect.addEventListener('change', updateResult);
+</script>
+
+</body>
+</html>
